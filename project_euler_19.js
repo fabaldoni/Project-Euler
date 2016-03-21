@@ -74,7 +74,6 @@ function daysInMonth(month,year){
 
 var results =[];
 var day_of_week = 0;
-var num_leap_years =0;
 
 
 for(var y=1900;y<=2000;y++){
@@ -90,8 +89,9 @@ for(var y=1900;y<=2000;y++){
             //console.log(d);
             //console.log(" y=" + y + " m=" + m + " d=" + d + " weekday=" + day_of_week);
             if(day_of_week === 7 && d===1){
-                //console.log("pushed");
-                results.push({"year":y,"month":m,"day":d,"weekday":day_of_week});
+                if(y > 1900){
+                    results.push({"year":y,"month":m,"day":d,"weekday":day_of_week});
+                }
             }
 
             if(day_of_week===7){
@@ -103,4 +103,3 @@ for(var y=1900;y<=2000;y++){
 
 //console.log(results);
 console.log(results.length);
-console.log(num_leap_years);
