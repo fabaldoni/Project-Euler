@@ -14,20 +14,20 @@
 
 function isLeapYear(year){
 
-    if(year%100 === 0 && year%400 === 0){
-        //console.log(year +" is a leap year")
-        return true;
+    if(year%100===0){
+        return year % 400 == 0;
+    }
+    else{
+        return year % 4 === 0;
     }
 
-    if(year%4===0 && year%100 !==0){
-        //console.log(year +" is a leap year")
-        return true;
-    }
-
-     //console.log(year +" is not a leap year (default)")
-    return false;
 }
-//console.log(isLeapYear(1900))
+
+//console.log(isLeapYear(1900));
+//console.log(isLeapYear(1901));
+//console.log(isLeapYear(-3.5));
+
+
 
 function daysInMonth(month,year){
     switch(month){
@@ -74,9 +74,12 @@ function daysInMonth(month,year){
 
 var results =[];
 var day_of_week = 0;
+var num_leap_years =0;
 
-for(var y=1900;y<2001;y++){
+
+for(var y=1900;y<=2000;y++){
     //console.log(y);
+
     for(var m=1; m<=12;m++){
         //console.log(m);
 
@@ -98,5 +101,6 @@ for(var y=1900;y<2001;y++){
     }
 }
 
-console.log(results);
+//console.log(results);
 console.log(results.length);
+console.log(num_leap_years);
