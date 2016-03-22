@@ -31,9 +31,11 @@ for(var j=1; j<10000;j++){
     var a = getSumDivisors(j);
     var b = getSumDivisors(a);
 
-    if(b === j){
+    if(b === j && j !== a){
         result += j + a
     }
 }
 
-console.log(result); //80568
+//each pair of amicable numbers was included twice, so divide by two to get the answer
+result = result/2;
+console.log(result); //31626
